@@ -1,0 +1,8 @@
+fixtures:
+  repositories:
+    stdlib:
+      repo: "https://github.com/Adaptavist/puppet-stdlib"
+    firewall:
+      repo: "https://github.com/Adaptavist/puppet-firewall"
+  symlinks:
+    fw: "#{source_dir}"
