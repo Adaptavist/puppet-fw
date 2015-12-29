@@ -9,10 +9,10 @@ class fw::post(
     true  => 'drop',
     false => 'accept',
   }
-  firewall { "999 $action all":
-    proto   => 'all',
-    action  => $action,
-    before  => undef,
+  firewall { "999 ${action} all":
+    proto  => 'all',
+    action => $action,
+    before => undef,
   }
 
 }
