@@ -1,5 +1,6 @@
 fw
 ===
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-fw.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-fw)
 
 This module manages basic firewall rules. It is a paramaterised class
 which can be driven from hiera. The Adaptavist `$host` variable is also
