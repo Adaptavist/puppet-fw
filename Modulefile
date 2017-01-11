@@ -1,5 +1,5 @@
 name 'adaptavist-fw'
-version '0.1.5'
+version '0.1.6'
 source 'https://github.com/Adaptavist/puppet-fw.git'
 author 'adaptavist'
 #license 'apache2'
