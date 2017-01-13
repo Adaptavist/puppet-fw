@@ -57,7 +57,7 @@ class fw (
   validate_hash($rules)
   validate_bool($on)
 
-  contain fw::pre
+  include fw::pre
 
   Firewall {
     before  => Class['fw::post'],
@@ -66,8 +66,8 @@ class fw (
 
   create_resources(firewall, $rules)
 
-  contain fw::custom
-  contain fw::post
+  include fw::custom
+  include fw::post
   # anchor { 'fw::start': } ->
   # Class['fw::pre'] ~>
   # Class['fw::custom'] ~>
