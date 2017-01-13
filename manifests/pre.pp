@@ -4,7 +4,7 @@
 #
 class fw::pre(
   $fw_chains = $fw::chains) inherits fw {
-  
+
   Firewall {
     require => undef,
   }

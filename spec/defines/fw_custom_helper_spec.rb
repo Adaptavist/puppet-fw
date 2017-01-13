@@ -8,7 +8,7 @@ describe 'fw::custom::helper', :type => 'define' do
     end
 
     context "should have [] as default parameter" do
-        it { should_not contain_firewallchain }
+        it { should_not contain_class('firewallchain') }
     end
     
     # context "should create firewallchains passed as parameters" do    

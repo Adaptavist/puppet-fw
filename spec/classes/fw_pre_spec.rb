@@ -7,7 +7,7 @@ describe 'fw::pre', :type => 'class' do
   
   context "Should inherit fw" do
     it do
-      should contain_fw
+      should contain_class('fw')
     end
   end  
 
