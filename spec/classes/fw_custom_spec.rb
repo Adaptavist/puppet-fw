@@ -5,12 +5,14 @@ fw_chains = ['service_hosts', 'management_hosts']
 describe 'fw::custom', :type => 'class' do
   
   context "Should inherit fw" do
+    let(:facts){{:kernel => 'Linux'}}
     it do
       should contain_class('fw')
     end
   end  
 
   context "Should create define fw_custom_helper with fw_chains" do
+    let(:facts){{:kernel => 'Linux'}}
     let(:params){{:fw_chains => fw_chains}}
     it do
       fw_chains.each do |chain|

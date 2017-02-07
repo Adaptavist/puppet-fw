@@ -18,7 +18,9 @@ rules = {
     }
 
 describe 'fw', :type => 'class' do
-    
+  
+  let(:facts){{:kernel => 'Linux'}}
+
   context "With default parameters it should create resource firewall and run pre, post and custom fw" do 
     it do
       should contain_class('fw::pre')

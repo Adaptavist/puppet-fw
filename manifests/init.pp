@@ -64,6 +64,7 @@ class fw (
     require => Class['fw::pre'],
   }
 
+  class { 'firewall': }
   create_resources(firewall, $rules)
 
   include fw::custom
