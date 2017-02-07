@@ -5,6 +5,8 @@ suffix = ':filter:IPv4'
 
 describe 'fw::pre', :type => 'class' do
   
+  let(:facts){{:kernel => 'Linux'}}
+  
   context "Should inherit fw" do
     it do
       should contain_class('fw')
