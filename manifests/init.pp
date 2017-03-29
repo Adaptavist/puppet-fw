@@ -49,13 +49,21 @@
 # == Author
 #    Jon Mort <jmort@adaptavist.com>
 class fw (
-  $on     = true,
-  $chains = [],
-  $rules  = {},
+  $on                         = true,
+  $chains                     = [],
+  $rules                      = {},
+  $create_rules_after_package = false,
+  $run_before_rules           = 'Package[iptables-services]',
+  $run_after_package          = 'Class[Fw::Pre]',
   ) {
   validate_array($chains)
   validate_hash($rules)
   validate_bool($on)
+
+  # if we are to run after a specific other resource for RedHat systems, enforce that
+  if ( $::osfamily == 'RedHat' and versioncmp($::operatingsystemrelease,'7') >= 0 and $::operatingsystem != 'Fedora' and str2bool($create_rules_after_package) ) {
+      $run_before_rules -> $run_after_package
+  }
 
   include fw::pre
 
