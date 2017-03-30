@@ -14,9 +14,8 @@ class fw::pre(
 
   resources { 'firewall':
     purge => true
-  } ->
-  fw::create_chains { 'fw::create_chains':
-      chains => $chains,
+  } -> fw::create_chains { 'fw::create_chains':
+    chains => $chains,
   }
 }
 
